@@ -6,8 +6,53 @@
 
 #grid-container {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: 0.5fr [out1-start console-start] 1fr [out1-end times-start] 1fr [times-end out2-start] 1fr [equals-start out2-end console-end] 0.5fr [break-start power-start turn-start] 0.5fr [equals-end in1-start] 1fr [in1-end break-end power-end turn-end] 0.5fr;
+  grid-template-rows: 0.5fr [out1-start out2-start in1-start times-start equals-start] 1fr [equals-end times-end out1-end out2-end in1-end] 0.5fr [console-start power-start] 1fr [power-end break-start] 1fr [break-end turn-start] 1fr [turn-end console-end] 0.5fr;
   width: 100vw;
   height: 100vh;
+}
+
+#out1 {
+  grid-area: out1;
+  background: blue;
+}
+
+#times {
+  grid-area: times;
+  background: grey;
+}
+
+#out2 {
+  grid-area: out2;
+  background: blue;
+}
+
+#equals {
+  grid-area: equals;
+  background: grey;
+}
+
+#in1 {
+  grid-area: in1;
+  background: blue;
+}
+
+#console {
+  grid-area: console;
+  background: black;
+}
+
+#power {
+  grid-area: power;
+  background: dodgerblue;
+}
+
+#break {
+  grid-area: break;
+  background: grey;
+}
+
+#turn {
+  grid-area: turn;
+  background: dodgerblue;
 }
