@@ -37,10 +37,21 @@
   background: blue;
 }
 
+/*
+ * Console
+ */
+
 #console {
   grid-area: console;
   background: black;
 }
+#console-text {
+  width: 100%;
+  height: 100%;
+}
+.user {color: red;}
+.white {color: white;}
+.command {color: #20C20E;}
 
 #power {
   grid-area: power;
