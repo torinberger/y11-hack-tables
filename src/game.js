@@ -8,7 +8,7 @@ function ranBetween(min, max) {
 // # Console
 
 function generateCommand() {
-  return "<p class='command'><span class='user'>admin@hack-master</span><span class='white'>$</span> "+commands[ranBetween(0, commands.length)]+"</p>";
+  return "<p class='command'><span class='user'>admin@hack-master</span><span class='white'>$</span> "+commands[ranBetween(0, commands.length-1)]+"</p>";
 }
 
 $(document).ready(function () {
