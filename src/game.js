@@ -12,7 +12,8 @@ function generateCommand() {
 }
 
 $(document).ready(function () {
-  for (var i = 0; i < 20; i++) {
+  $("#console-text").on("click", function () {
     $("#console-text").append(generateCommand());
-  }
+    $("#console-text").animate({ scrollTop: $("#console-text")[0].scrollHeight - $("#console-text").height() }, 500);
+  });
 });
