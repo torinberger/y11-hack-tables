@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+body {
+  background: lightblue;
+  background-size: contain;
+}
+
 #grid-container {
   display: grid;
   grid-template-columns: 0.5fr [out1-start console-start] 1fr [out1-end times-start] 1fr [times-end out2-start] 1fr [equals-start out2-end console-end] 0.5fr [break-start power-start turn-start] 0.5fr [equals-end in1-start] 1fr [in1-end break-end power-end turn-end] 0.5fr;
@@ -21,6 +26,7 @@
   grid-area: times;
 }
 #times i {
+  color: white;
   margin-left: 45%;
   margin-right: 45%;
   width: 10%;
@@ -39,6 +45,7 @@
   grid-area: equals;
 }
 #equals i {
+  color: white;
   margin-left: 45%;
   margin-right: 45%;
   width: 10%;
