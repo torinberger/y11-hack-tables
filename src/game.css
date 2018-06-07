@@ -19,7 +19,15 @@
 
 #times {
   grid-area: times;
-  background: grey;
+}
+#times i {
+  margin-left: 45%;
+  margin-right: 45%;
+  width: 10%;
+  height: 10%;
+  margin-top: 45%;
+  margin-bottom: 45%;
+  font-size: 200%;
 }
 
 #out2 {
@@ -29,7 +37,15 @@
 
 #equals {
   grid-area: equals;
-  background: grey;
+}
+#equals i {
+  margin-left: 45%;
+  margin-right: 45%;
+  width: 10%;
+  height: 10%;
+  margin-top: 45%;
+  margin-bottom: 45%;
+  font-size: 200%;
 }
 
 #in1 {
