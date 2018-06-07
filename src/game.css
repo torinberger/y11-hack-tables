@@ -78,7 +78,12 @@
 
 #break {
   grid-area: break;
-  background: grey;
+}
+#break-element {
+  margin-top: 16%;
+  width: 99%;
+  height: 0.1%;
+  border: 2px solid black;
 }
 
 #turn {
