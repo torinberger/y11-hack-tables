@@ -50,7 +50,12 @@
 
 #in1 {
   grid-area: in1;
-  background: blue;
+}
+#in1 input {
+  width: 75%;
+  height: 100%;
+  font-size: 10vh;
+  padding-left: 20%;
 }
 
 /*
