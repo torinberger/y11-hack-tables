@@ -16,4 +16,10 @@ $(document).ready(function () {
     $("#console-text").append(generateCommand());
     $("#console-text").animate({ scrollTop: $("#console-text")[0].scrollHeight - $("#console-text").height() }, 500);
   });
+
+  $(document).keypress(function(e) {
+    if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus")) {
+      alert('You pressed enter!');
+    }
+  });
 });
