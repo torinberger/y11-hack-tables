@@ -18,7 +18,7 @@ $(document).ready(function () {
   });
 
   $(document).keypress(function(e) {
-    if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus")) {
+    if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val())) {
       alert('You pressed enter!');
     }
   });
