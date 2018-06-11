@@ -21,6 +21,10 @@ body {
   grid-area: out1;
   background: blue;
 }
+#out1 h1 {
+  padding-top: 1vh;
+  font-size: 10vw;
+}
 
 #times {
   grid-area: times;
@@ -39,6 +43,10 @@ body {
 #out2 {
   grid-area: out2;
   background: blue;
+}
+#out2 h1 {
+  padding-top: 1vh;
+  font-size: 10vw;
 }
 
 #equals {
