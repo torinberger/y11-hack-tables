@@ -37,6 +37,8 @@ $(document).ready(function () {
         populateOuts();
       } else {
         alert("You Loose!");
+        $("#in1 > input:nth-child(1)").val("");
+        populateOuts();
       }
     }
   });
