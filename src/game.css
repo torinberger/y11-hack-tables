@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
 
  * {
   margin: 0;
@@ -85,7 +86,7 @@ body {
 #console {
   grid-area: console;
   background: rgba(0, 0, 0, 0.5);
-  font: monospace;
+  font-family: 'Share Tech Mono', monospace;
 }
 #console-text {
   width: 98%;
