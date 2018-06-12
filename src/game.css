@@ -7,7 +7,7 @@
 }
 
 body {
-  background: lightblue;
+  background: url("../img/background.jpg");
   background-size: contain;
   font-family: 'Open Sans', sans-serif;
 }
@@ -27,6 +27,7 @@ body {
 #out1 h1 {
   padding-top: 3vh;
   font-size: 10vw;
+  color: white;
 }
 
 #times {
@@ -50,6 +51,7 @@ body {
 #out2 h1 {
   padding-top: 3vh;
   font-size: 10vw;
+  color: white;
 }
 
 #equals {
@@ -82,7 +84,7 @@ body {
 
 #console {
   grid-area: console;
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
   font: monospace;
 }
 #console-text {
