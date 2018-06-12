@@ -11,7 +11,8 @@ function ranBetween(min, max) {
 // # Console
 
 function generateCommand() {
-  var command = "<p class='command'><span class='user'>admin@hack-master</span><span class='white'>$</span> "+commands[ranBetween(0, commands.length-1)]+"</p>";
+  var target = ranBetween(0, commands.length-1);
+  var command = "<p class='command'><span class='user'>admin@hack-master</span><span class='white'>$</span> "+commands[target]+"</p>";
   $("#console-text").append(command);
   $("#console-text").animate({ scrollTop: $("#console-text")[0].scrollHeight - $("#console-text").height() }, 500);
 }
