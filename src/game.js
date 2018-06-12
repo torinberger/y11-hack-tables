@@ -22,16 +22,19 @@ function populateOuts() {
 }
 
 $(document).ready(function () {
+  populateOuts();
+
   $("#console-text").on("click", function () {
     $("#console-text").append(generateCommand());
     $("#console-text").animate({ scrollTop: $("#console-text")[0].scrollHeight - $("#console-text").height() }, 500);
-    populateOuts();
   });
 
   $(document).keypress(function(e) {
     if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val())) {
       if(Number($("#in1 > input:nth-child(1)").val()) == out1*out2) {
         alert("You win!");
+        $("#in1 > input:nth-child(1)").val("");
+        populateOuts();
       } else {
         alert("You Loose!");
       }
