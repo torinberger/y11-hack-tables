@@ -20,9 +20,10 @@ body {
 #out1 {
   grid-area: out1;
   background: blue;
+  text-align: center;
 }
 #out1 h1 {
-  padding-top: 1vh;
+  padding-top: 5vh;
   font-size: 10vw;
 }
 
@@ -43,9 +44,10 @@ body {
 #out2 {
   grid-area: out2;
   background: blue;
+  text-align: center;
 }
 #out2 h1 {
-  padding-top: 1vh;
+  padding-top: 5vh;
   font-size: 10vw;
 }
 
