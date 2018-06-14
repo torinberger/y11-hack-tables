@@ -45,7 +45,6 @@ $(document).ready(function () {
   $(document).keypress(function(e) {
     if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val())) {
       if(Number($("#in1 > input:nth-child(1)").val()) == out1*out2) {
-        alert("You win!");
         $("#in1 > input:nth-child(1)").val("");
         $("#in1 > input:nth-child(1)").css("background", "green");
         setTimeout(function () {
@@ -54,7 +53,6 @@ $(document).ready(function () {
         generateCommand();
         populateOuts();
       } else {
-        alert("You Loose!");
         $("#in1 > input:nth-child(1)").val("");
         $("#in1 > input:nth-child(1)").css("background", "red");
         setTimeout(function () {
