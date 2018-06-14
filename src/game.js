@@ -47,11 +47,19 @@ $(document).ready(function () {
       if(Number($("#in1 > input:nth-child(1)").val()) == out1*out2) {
         alert("You win!");
         $("#in1 > input:nth-child(1)").val("");
+        $("#in1 > input:nth-child(1)").css("background", "green");
+        setTimeout(function () {
+          $("#in1 > input:nth-child(1)").css("background", "white");
+        }, 500);
         generateCommand();
         populateOuts();
       } else {
         alert("You Loose!");
         $("#in1 > input:nth-child(1)").val("");
+        $("#in1 > input:nth-child(1)").css("background", "red");
+        setTimeout(function () {
+          $("#in1 > input:nth-child(1)").css("background", "white");
+        }, 500);
         generateCommand();
         populateOuts();
       }
