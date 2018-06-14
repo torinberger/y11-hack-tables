@@ -102,6 +102,13 @@ body {
   grid-area: power;
   background: dodgerblue;
 }
+#power-container {
+  width: 91%;
+  margin: 4%;
+  margin-top: 10%;
+  height: 40%;
+  background: purple;
+}
 
 #break {
   grid-area: break;
