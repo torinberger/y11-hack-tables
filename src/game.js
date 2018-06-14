@@ -11,6 +11,8 @@ var outputs = ["[Hack] Hacking into firewall...\n[Hack] firewall hacked!\n[Hack]
 
 var out1;
 var out2;
+var blue = 50;
+var red = 50;
 
 function ranBetween(min, max) {
   return Math.round(Math.random() * (max - min) + min);
@@ -39,6 +41,18 @@ function populateOuts() {
   $("#out2").html("<h1>" + out2 + "</h1>");
 }
 
+function power(win) {
+  if(win) {
+    blue += 10;
+    red -= 10;
+  } else {
+    blue -= 10;
+    red += 10;
+  }
+  $("#power-red").css("width", String(red+"%"));
+  $("#power-blue").css("width", String(blue+"%"));
+}
+
 $(document).ready(function () {
   populateOuts();
 
@@ -51,6 +65,7 @@ $(document).ready(function () {
           $("#in1 > input:nth-child(1)").css("background", "white");
         }, 500);
         generateCommand();
+        power(true);
         populateOuts();
       } else {
         $("#in1 > input:nth-child(1)").val("");
@@ -59,6 +74,7 @@ $(document).ready(function () {
           $("#in1 > input:nth-child(1)").css("background", "white");
         }, 500);
         generateCommand();
+        power(false);
         populateOuts();
       }
     }
