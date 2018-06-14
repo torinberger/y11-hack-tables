@@ -110,6 +110,27 @@ body {
   height: 40%;
   background: purple;
 }
+#power-red {
+  height: 100%;
+  width: 40%;
+  margin: 0;
+  background: red;
+  display: inline-block;
+}
+#power-firewall {
+  height: 100%;
+  width: 20%;
+  margin: 0;
+  background: yellow;
+  display: inline-block;
+}
+#power-blue {
+  height: 100%;
+  width: 40%;
+  margin: 0;
+  background: blue;
+  display: inline-block;
+}
 
 #break {
   grid-area: break;
