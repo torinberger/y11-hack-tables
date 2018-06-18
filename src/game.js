@@ -43,17 +43,23 @@ function populateOuts() {
 
 function power(win) {
   if(win) {
-    if(red == 10) {
-      alert("YOU WIN!")
+    if(red == 0) {
+      alert("YOU WIN!");
+      red = 50;
+      blue = 50;
+    } else {
+      blue += 10;
+      red -= 10;
     }
-    blue += 10;
-    red -= 10;
   } else {
-    if(blue == 10) {
-      alert("YOU Loose!")
+    if(blue == 0) {
+      alert("YOU LOOSE!");
+      blue = 50;
+      red = 50;
+    } else {
+      blue -= 10;
+      red += 10;
     }
-    blue -= 10;
-    red += 10;
   }
   $("#power-red").css("width", String(red+"%"));
   $("#power-blue").css("width", String(blue+"%"));
