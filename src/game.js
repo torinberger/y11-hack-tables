@@ -26,7 +26,7 @@ function generateCommand() {
   $("#console-text").append(command);
   $("#console-text").animate({ scrollTop: $("#console-text")[0].scrollHeight - $("#console-text").height() }, 500);
 
-  var outputTarget = ranBetween(0, outputs.length);
+  var outputTarget = ranBetween(0, outputs.length-1);
   var output = outputs[outputTarget].split("\n");
   for (var i = 0; i < output.length; i++) {
     $("#console-text").append("<p class='command'>"+output[i]+"</p>");
@@ -43,9 +43,15 @@ function populateOuts() {
 
 function power(win) {
   if(win) {
+    if(red == 10) {
+      alert("YOU WIN!")
+    }
     blue += 10;
     red -= 10;
   } else {
+    if(blue == 10) {
+      alert("YOU Loose!")
+    }
     blue -= 10;
     red += 10;
   }
