@@ -105,6 +105,7 @@ function enemyTurn() {
     power(true);
   }
   acceptInput = true;
+  $("#in1 > input:nth-child(1)").css("background", "white");
 }
 
 $(document).ready(function () {
@@ -118,25 +119,25 @@ $(document).ready(function () {
       if(Number($("#in1 > input:nth-child(1)").val()) == out1*out2) {
         $("#in1 > input:nth-child(1)").val("");
         $("#in1 > input:nth-child(1)").css("background", "green");
-        setTimeout(function () {
-          $("#in1 > input:nth-child(1)").css("background", "white");
-        }, 500);
+
         generateCommand();
         power(true);
         populateOuts();
+
         acceptInput = false;
-        setTimeout(enemyTurn, 1000);
+        $("#in1 > input:nth-child(1)").css("background", "grey");
+        setTimeout(enemyTurn, 2000);
       } else {
         $("#in1 > input:nth-child(1)").val("");
         $("#in1 > input:nth-child(1)").css("background", "red");
-        setTimeout(function () {
-          $("#in1 > input:nth-child(1)").css("background", "white");
-        }, 500);
+
         generateCommand();
         power(false);
         populateOuts();
+
         acceptInput = false;
-        setTimeout(enemyTurn, 1000);
+        $("#in1 > input:nth-child(1)").css("background", "grey");
+        setTimeout(enemyTurn, 2000);
       }
     }
   });
