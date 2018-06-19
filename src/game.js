@@ -105,6 +105,7 @@ function enemyTurn() {
     power(true);
   }
   acceptInput = true;
+  $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
   $("#in1 > input:nth-child(1)").css("background", "white");
 }
 
@@ -125,6 +126,7 @@ $(document).ready(function () {
         populateOuts();
 
         acceptInput = false;
+        $("#red-turn").css("background", "rgba(255, 255, 255, 0.5)");
         $("#in1 > input:nth-child(1)").css("background", "grey");
         setTimeout(enemyTurn, 2000);
       } else {
@@ -136,6 +138,7 @@ $(document).ready(function () {
         populateOuts();
 
         acceptInput = false;
+        $("#red-turn").css("background", "rgba(255, 255, 255, 0.5)");
         $("#in1 > input:nth-child(1)").css("background", "grey");
         setTimeout(enemyTurn, 2000);
       }
