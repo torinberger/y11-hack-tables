@@ -34,8 +34,8 @@ var out1;
 var out2;
 var blue = 50;
 var red = 50;
-var difficulty = 0;
-var gameLength = 0;
+var difficulty = 10;
+var gameLength = 10;
 var acceptInput = true;
 
 // # random num generater
@@ -105,6 +105,7 @@ function enemyTurn() {
     power(true);
   }
   acceptInput = true;
+  $("#red-turn").css("background", "rgba(0, 0, 0, 0.5)");
   $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
   $("#in1 > input:nth-child(1)").css("background", "white");
 }
@@ -112,6 +113,7 @@ function enemyTurn() {
 $(document).ready(function () {
   populateOuts();
 
+  $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
   // # when enter hit
   difficulty = 5;
 
@@ -126,6 +128,7 @@ $(document).ready(function () {
         populateOuts();
 
         acceptInput = false;
+        $("#blue-turn").css("background", "rgba(0, 0, 0, 0.5)");
         $("#red-turn").css("background", "rgba(255, 255, 255, 0.5)");
         $("#in1 > input:nth-child(1)").css("background", "grey");
         setTimeout(enemyTurn, 2000);
@@ -138,6 +141,7 @@ $(document).ready(function () {
         populateOuts();
 
         acceptInput = false;
+        $("#blue-turn").css("background", "rgba(0, 0, 0, 0.5)");
         $("#red-turn").css("background", "rgba(255, 255, 255, 0.5)");
         $("#in1 > input:nth-child(1)").css("background", "grey");
         setTimeout(enemyTurn, 2000);
