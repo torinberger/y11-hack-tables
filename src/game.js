@@ -34,6 +34,7 @@ var out1;
 var out2;
 var blue = 50;
 var red = 50;
+var difficulty = 0;
 
 // # random num generater
 
@@ -92,10 +93,22 @@ function power(win) {
   $("#power-blue").css("width", String(blue+"%"));
 }
 
+function enemyTurn() {
+  var chance = ranBetween(0, 10-difficulty);
+  if(chance == 1) {
+    alert("Enemy Won!")
+    power(false);
+  } else {
+    alert("Enemy Lost!")
+    power(true);
+  }
+}
+
 $(document).ready(function () {
   populateOuts();
 
   // # when enter hit
+  difficulty = 5;
 
   $(document).keypress(function(e) {
     if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val())) {
@@ -108,6 +121,7 @@ $(document).ready(function () {
         generateCommand();
         power(true);
         populateOuts();
+        enemyTurn();
       } else {
         $("#in1 > input:nth-child(1)").val("");
         $("#in1 > input:nth-child(1)").css("background", "red");
@@ -117,6 +131,7 @@ $(document).ready(function () {
         generateCommand();
         power(false);
         populateOuts();
+        enemyTurn();
       }
     }
   });
