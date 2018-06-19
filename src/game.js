@@ -35,6 +35,8 @@ var out2;
 var blue = 50;
 var red = 50;
 var difficulty = 0;
+var gameLength = 0;
+var acceptInput = true;
 
 // # random num generater
 
@@ -76,8 +78,8 @@ function power(win) {
       red = 50;
       blue = 50;
     } else {
-      blue += 10;
-      red -= 10;
+      blue += gameLength;
+      red -= gameLength;
     }
   } else {
     if(blue == 0) {
@@ -85,8 +87,8 @@ function power(win) {
       blue = 50;
       red = 50;
     } else {
-      blue -= 10;
-      red += 10;
+      blue -= gameLength;
+      red += gameLength;
     }
   }
   $("#power-red").css("width", String(red+"%"));
@@ -102,6 +104,7 @@ function enemyTurn() {
     alert("Enemy Lost!")
     power(true);
   }
+  acceptInput = true;
 }
 
 $(document).ready(function () {
@@ -111,7 +114,7 @@ $(document).ready(function () {
   difficulty = 5;
 
   $(document).keypress(function(e) {
-    if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val())) {
+    if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val()) && acceptInput == true) {
       if(Number($("#in1 > input:nth-child(1)").val()) == out1*out2) {
         $("#in1 > input:nth-child(1)").val("");
         $("#in1 > input:nth-child(1)").css("background", "green");
@@ -121,7 +124,8 @@ $(document).ready(function () {
         generateCommand();
         power(true);
         populateOuts();
-        enemyTurn();
+        acceptInput = false;
+        setTimeout(enemyTurn, 1000);
       } else {
         $("#in1 > input:nth-child(1)").val("");
         $("#in1 > input:nth-child(1)").css("background", "red");
@@ -131,7 +135,8 @@ $(document).ready(function () {
         generateCommand();
         power(false);
         populateOuts();
-        enemyTurn();
+        acceptInput = false;
+        setTimeout(enemyTurn, 1000);
       }
     }
   });
