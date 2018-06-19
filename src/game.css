@@ -138,4 +138,19 @@ body {
 #turn {
   grid-area: turn;
   background: dodgerblue;
+  display: grid;
+  grid-template-rows: [a-start b-start] 1fr [a-end b-end];
+  grid-template-columns:  [a-start] 1fr [a-end b-start] 1fr [b-end];
+}
+
+#blue-turn {
+  grid-area: a;
+  width: 100%;
+  height: 100%;
+}
+
+#red-turn {
+  grid-area: b;
+  width: 100%;
+  height: 100%;
 }
