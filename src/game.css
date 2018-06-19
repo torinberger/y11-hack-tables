@@ -137,7 +137,7 @@ body {
 
 #turn {
   grid-area: turn;
-  background: dodgerblue;
+  background: rgba(0, 0, 0, 0.5);
   display: grid;
   grid-template-rows: [a-start b-start] 1fr [a-end b-end];
   grid-template-columns:  [a-start] 1fr [a-end b-start] 1fr [b-end];
@@ -147,10 +147,26 @@ body {
   grid-area: a;
   width: 100%;
   height: 100%;
+  display: flex;
+}
+
+#blue-turn i {
+  margin: auto;
+  font-size: 4vw;
+  color: blue;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.5vw;
 }
 
 #red-turn {
   grid-area: b;
   width: 100%;
   height: 100%;
+  display: flex;
+}
+
+#red-turn i {
+  margin: auto;
+  font-size: 4vw;
+  color: red;
 }
