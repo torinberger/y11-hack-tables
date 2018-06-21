@@ -21,6 +21,35 @@ body {
   height: 100vh;
 }
 
+#menu-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+#menu {
+  margin: auto;
+  width: 30vw;
+  height: 80vh;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  color: #20C20E;
+  padding: 1vw;
+}
+
+#menu-header {
+  text-align: center;
+  width: 100%;
+  padding-top: 5vh;
+  font-size: 3vw;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+#game-length, #game-difficulty {
+  width: 80%;
+  margin-left: 10%;
+}
+
 #out1 {
   grid-area: out1;
   text-align: center;
