@@ -101,7 +101,7 @@ function power(win) {
 }
 
 function enemyTurn() {
-  var chance = ranBetween(0, 10-difficulty);
+  var chance = ranBetween(1, 11-difficulty);
   if(chance == 1) {
     alert("Enemy Won!")
     generateCommand("red");
@@ -122,7 +122,7 @@ $(document).ready(function () {
 
   $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
   // # when enter hit
-  difficulty = 5;
+  // difficulty = 5;
 
   $(document).keypress(function(e) {
     if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val()) && acceptInput == true) {
