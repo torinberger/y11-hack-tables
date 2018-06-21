@@ -46,9 +46,14 @@ function ranBetween(min, max) {
 
 // # Console
 
-function generateCommand() {
+function generateCommand(color) {
   var target = ranBetween(0, commands.length-1);
-  var command = "<p class='command'><span class='user'>admin@hack-master</span><span class='white'>$</span> "+commands[target]+"</p>";
+  var command;
+  if(color == "blue") {
+    command = "<p class='command'><span style='color: blue;' class='user'>admin@hack-master</span><span class='white'>$</span> "+commands[target]+"</p>";
+  } else {
+    command = "<p class='command'><span style='color: red;' class='user'>badguy@hack-headquarters</span><span class='white'>$</span> "+commands[target]+"</p>";
+  }
   $("#console-text").append(command);
   $("#console-text").animate({ scrollTop: $("#console-text")[0].scrollHeight - $("#console-text").height() }, 500);
 
@@ -99,9 +104,11 @@ function enemyTurn() {
   var chance = ranBetween(0, 10-difficulty);
   if(chance == 1) {
     alert("Enemy Won!")
+    generateCommand("red");
     power(false);
   } else {
     alert("Enemy Lost!")
+    generateCommand("red");
     power(true);
   }
   acceptInput = true;
@@ -123,7 +130,7 @@ $(document).ready(function () {
         $("#in1 > input:nth-child(1)").val("");
         $("#in1 > input:nth-child(1)").css("background", "green");
 
-        generateCommand();
+        generateCommand("blue");
         power(true);
         populateOuts();
 
@@ -136,7 +143,7 @@ $(document).ready(function () {
         $("#in1 > input:nth-child(1)").val("");
         $("#in1 > input:nth-child(1)").css("background", "red");
 
-        generateCommand();
+        generateCommand("blue");
         power(false);
         populateOuts();
 
