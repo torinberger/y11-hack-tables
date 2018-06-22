@@ -80,7 +80,7 @@ function populateOuts() {
 function power(win) {
   if(win) {
     if(red-gameLength <= 0) {
-      alert("YOU WIN!");
+      GUIAlert("YOU", "WIN!", "green");
       console.log("SET WON TO TRUE");
       won = true;
       setTimeout(function () {
@@ -95,7 +95,7 @@ function power(win) {
     }
   } else {
     if(blue-gameLength <= 0) {
-      alert("YOU LOOSE!");
+      GUIAlert("YOU", "LOSE!", "red");
       console.log("SET WON TO TRUE");
       won = true;
       setTimeout(function () {
@@ -117,13 +117,13 @@ function enemyTurn() {
   var chance = ranBetween(1, 11-difficulty);
   if(chance == 1) {
     if(!won) {
-      alert("Enemy Won!")
+      GUIAlert("ENEMY", "WON!", "red");
       generateCommand("red");
       power(false);
     }
   } else {
     if(!won) {
-      alert("Enemy Lost!")
+      GUIAlert("ENEMY", "LOST!", "green");
       generateCommand("red");
       power(true);
     }
@@ -132,6 +132,19 @@ function enemyTurn() {
   $("#red-turn").css("background", "rgba(0, 0, 0, 0.5)");
   $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
   $("#in1 > input:nth-child(1)").css("background", "white");
+}
+
+function GUIAlert(who, what, color) {
+  $("#power-container").css("display", "none");
+  $("#result-container").css("display", "block");
+  $("#result-container").css("background", String(color));
+  $("#result-container").html("<h1>"+who+" "+what+"</h1>");
+  setTimeout(function () {
+    $("#result-container").fadeOut(500);
+    setTimeout(function () {
+      $("#power-container").css("display", "block");
+    }, 500);
+  }, 1000);
 }
 
 $(document).ready(function () {
@@ -151,6 +164,7 @@ $(document).ready(function () {
   });
 
   $("#grid-container").css("display", "none");
+  $("#result-container").css("display", "none");
   $(document).keypress(function(e) {
     if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val()) && acceptInput == true) {
       if(Number($("#in1 > input:nth-child(1)").val()) == out1*out2) {

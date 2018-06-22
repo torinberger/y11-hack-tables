@@ -139,6 +139,13 @@ body {
   height: 40%;
   background: purple;
 }
+#result-container {
+  width: 91%;
+  margin: 4%;
+  margin-top: 10%;
+  height: 40%;
+  background: green;
+}
 #power-red {
   height: 100%;
   width: 50%;
