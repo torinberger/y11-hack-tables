@@ -37,6 +37,7 @@ var red = 50;
 var difficulty = 10;
 var gameLength = 10;
 var acceptInput = true;
+var won = false;
 
 // # random num generater
 
@@ -78,8 +79,14 @@ function populateOuts() {
 
 function power(win) {
   if(win) {
-    if(red == 0) {
+    if(red-gameLength <= 0) {
       alert("YOU WIN!");
+      console.log("SET WON TO TRUE");
+      won = true;
+      setTimeout(function () {
+        console.log("SET WON TO FALSE");
+        won = false;
+      }, 3000);
       red = 50;
       blue = 50;
     } else {
@@ -87,8 +94,14 @@ function power(win) {
       red -= gameLength;
     }
   } else {
-    if(blue == 0) {
+    if(blue-gameLength <= 0) {
       alert("YOU LOOSE!");
+      console.log("SET WON TO TRUE");
+      won = true;
+      setTimeout(function () {
+        console.log("SET WON TO FALSE");
+        won = false;
+      }, 3000);
       blue = 50;
       red = 50;
     } else {
@@ -103,13 +116,17 @@ function power(win) {
 function enemyTurn() {
   var chance = ranBetween(1, 11-difficulty);
   if(chance == 1) {
-    alert("Enemy Won!")
-    generateCommand("red");
-    power(false);
+    if(!won) {
+      alert("Enemy Won!")
+      generateCommand("red");
+      power(false);
+    }
   } else {
-    alert("Enemy Lost!")
-    generateCommand("red");
-    power(true);
+    if(!won) {
+      alert("Enemy Lost!")
+      generateCommand("red");
+      power(true);
+    }
   }
   acceptInput = true;
   $("#red-turn").css("background", "rgba(0, 0, 0, 0.5)");
@@ -123,6 +140,15 @@ $(document).ready(function () {
   $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
   // # when enter hit
   // difficulty = 5;
+
+  $("#play").click(function () {
+    $("#menu-container").css("display", "none");
+    $("#grid-container").css("display", "grid");
+    gameLength = 11-Number($("#game-length").val());
+    console.log(gameLength);
+    difficulty = Number($("#game-difficulty").val());
+    console.log(difficulty);
+  });
 
   $("#grid-container").css("display", "none");
   $(document).keypress(function(e) {
