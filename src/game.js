@@ -133,7 +133,7 @@ function GUIAlert(who, what, color) {
   console.log("GUI ALERT FOR "+who+" "+what+"!");
   $("#power-container").fadeOut(100);
   $("#result-container").css("background", String(color));
-  $("#result-container").html("<h1>"+who+" "+what+"</h1>");
+  $("#result-container").html("<h1 id='result-h1'>"+who+" "+what+"</h1>");
   $("#result-container").css("display", "block").hide().delay(100).fadeIn(500);
   setTimeout(function () {
     $("#result-container").fadeOut(500);
