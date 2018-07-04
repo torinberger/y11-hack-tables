@@ -138,6 +138,36 @@ function power(win) {
                       setTimeout(function () {
                         var audio = new Audio('src/lose.mp3');
                         audio.play();
+                        var audio = new Audio('src/lose.mp3');
+                      audio.play();
+                      setTimeout(function () {
+                        var audio = new Audio('src/lose.mp3');
+                        audio.play();
+                        var audio = new Audio('src/lose.mp3');
+                      audio.play();
+                      setTimeout(function () {
+                        var audio = new Audio('src/lose.mp3');
+                        audio.play();
+                        var audio = new Audio('src/lose.mp3');
+                      audio.play();
+                      setTimeout(function () {
+                        var audio = new Audio('src/lose.mp3');
+                        audio.play();
+                        var audio = new Audio('src/lose.mp3');
+                      audio.play();
+                      setTimeout(function () {
+                        var audio = new Audio('src/lose.mp3');
+                        audio.play();
+                        var audio = new Audio('src/lose.mp3');
+                      audio.play();
+                      setTimeout(function () {
+                        var audio = new Audio('src/lose.mp3');
+                        audio.play();
+                      }, 10);
+                      }, 10);
+                      }, 10);
+                      }, 10);
+                      }, 10);
                       }, 10);
                     }, 10);
                   }, 10);
