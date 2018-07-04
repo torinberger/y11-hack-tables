@@ -82,9 +82,11 @@ function power(win) {
   if(win) {
     if(red-gameLength <= 0) {
       won = true;
+      $("#menu-container").css("display", "flex");
+      $("#grid-container").css("display", "none");
       setTimeout(function () {
         won = false;
-      }, 3000);
+      }, 4000);
       red = 50;
       blue = 50;
     } else {
@@ -93,10 +95,12 @@ function power(win) {
     }
   } else {
     if(blue-gameLength <= 0) {
+      $("#menu-container").css("display", "flex");
+      $("#grid-container").css("display", "none");
       won = true;
       setTimeout(function () {
         won = false;
-      }, 3000);
+      }, 4000);
       blue = 50;
       red = 50;
     } else {
@@ -123,10 +127,12 @@ function enemyTurn() {
       power(true);
     }
   }
-  acceptInput = true;
-  $("#red-turn").css("background", "rgba(0, 0, 0, 0.5)");
-  $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
-  $("#in1 > input:nth-child(1)").css("background", "white");
+  setTimeout(function () {
+    acceptInput = true;
+    $("#red-turn").css("background", "rgba(0, 0, 0, 0.5)");
+    $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
+    $("#in1 > input:nth-child(1)").css("background", "white");
+  }, 5000);
 }
 
 function GUIAlert(who, what, color) {
@@ -167,7 +173,6 @@ $(document).ready(function () {
     if(e.which == 13 && $("#in1 > input:nth-child(1)").is(":focus") && $("#in1 > input:nth-child(1)").val() != "" && !isNaN($("#in1 > input:nth-child(1)").val()) && acceptInput == true) {
       if(Number($("#in1 > input:nth-child(1)").val()) == out1*out2) {
         $("#in1 > input:nth-child(1)").val("");
-        $("#in1 > input:nth-child(1)").css("background", "green");
 
         generateCommand("blue");
         if(doAudio) {
@@ -182,10 +187,9 @@ $(document).ready(function () {
         $("#blue-turn").css("background", "rgba(0, 0, 0, 0.5)");
         $("#red-turn").css("background", "rgba(255, 255, 255, 0.5)");
         $("#in1 > input:nth-child(1)").css("background", "grey");
-        setTimeout(enemyTurn, 2000);
+        setTimeout(enemyTurn, 3000);
       } else {
         $("#in1 > input:nth-child(1)").val("");
-        $("#in1 > input:nth-child(1)").css("background", "red");
 
         generateCommand("blue");
         if(doAudio) {
@@ -200,7 +204,7 @@ $(document).ready(function () {
         $("#blue-turn").css("background", "rgba(0, 0, 0, 0.5)");
         $("#red-turn").css("background", "rgba(255, 255, 255, 0.5)");
         $("#in1 > input:nth-child(1)").css("background", "grey");
-        setTimeout(enemyTurn, 2000);
+        setTimeout(enemyTurn, 3000);
       }
     }
   });
