@@ -84,10 +84,20 @@ function power(win) {
       won = true;
       /*$("#menu-container").css("display", "flex").hide();*/
       $("#grid-container").css("display", "none");
+      $("body").css("background", "green");
       $("#game-result").text("YOU WON");
+      $("#game-result").show();
+      if(doAudio) {
+        var audio = new Audio('src/cheer.mp3');
+        audio.play();
+      }
+      won = true;
       setTimeout(function () {
+        $("#game-result").hide();
+        $("body").css("background", "url('img/background.jpg')");
+        $("#menu-container").css("display", "flex");
         won = false;
-      }, 4000);
+      }, 3000);
       red = 50;
       blue = 50;
     } else {
@@ -98,11 +108,52 @@ function power(win) {
     if(blue-gameLength <= 0) {
       /*$("#menu-container").css("display", "flex").hide();*/
       $("#grid-container").css("display", "none");
+      $("body").css("background", "red");
       $("#game-result").text("YOU LOST");
+      $("#game-result").show();
+      if(doAudio) {
+        var audio = new Audio('src/lose.mp3');
+        audio.play();
+        setTimeout(function () {
+          var audio = new Audio('src/lose.mp3');
+          audio.play();
+          setTimeout(function () {
+            var audio = new Audio('src/lose.mp3');
+            audio.play();
+            setTimeout(function () {
+              var audio = new Audio('src/lose.mp3');
+              audio.play();
+              setTimeout(function () {
+                var audio = new Audio('src/lose.mp3');
+                audio.play();
+                setTimeout(function () {
+                  var audio = new Audio('src/lose.mp3');
+                  audio.play();
+                  setTimeout(function () {
+                    var audio = new Audio('src/lose.mp3');
+                    audio.play();
+                    setTimeout(function () {
+                      var audio = new Audio('src/lose.mp3');
+                      audio.play();
+                      setTimeout(function () {
+                        var audio = new Audio('src/lose.mp3');
+                        audio.play();
+                      }, 10);
+                    }, 10);
+                  }, 10);
+                }, 100);
+              }, 50);
+            }, 100);
+          }, 200);
+        }, 200);
+      }
       won = true;
       setTimeout(function () {
+        $("#game-result").hide();
+        $("body").css("background", "url('img/background.jpg')");
+        $("#menu-container").css("display", "flex");
         won = false;
-      }, 4000);
+      }, 3000);
       blue = 50;
       red = 50;
     } else {
@@ -134,7 +185,7 @@ function enemyTurn() {
     $("#red-turn").css("background", "rgba(0, 0, 0, 0.5)");
     $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
     $("#in1 > input:nth-child(1)").css("background", "white");
-  }, 300);
+  }, 2000);
 }
 
 function GUIAlert(who, what, color) {
