@@ -80,11 +80,8 @@ function populateOuts() {
 function power(win) {
   if(win) {
     if(red-gameLength <= 0) {
-      GUIAlert("YOU", "WIN!", "green");
-      console.log("SET WON TO TRUE");
       won = true;
       setTimeout(function () {
-        console.log("SET WON TO FALSE");
         won = false;
       }, 3000);
       red = 50;
@@ -95,11 +92,8 @@ function power(win) {
     }
   } else {
     if(blue-gameLength <= 0) {
-      GUIAlert("YOU", "LOSE!", "red");
-      console.log("SET WON TO TRUE");
       won = true;
       setTimeout(function () {
-        console.log("SET WON TO FALSE");
         won = false;
       }, 3000);
       blue = 50;
@@ -135,14 +129,15 @@ function enemyTurn() {
 }
 
 function GUIAlert(who, what, color) {
-  $("#power-container").css("display", "none");
-  $("#result-container").css("display", "block");
+  console.log("GUI ALERT FOR "+who+" "+what+"!");
+  $("#power-container").fadeOut(100);
   $("#result-container").css("background", String(color));
   $("#result-container").html("<h1>"+who+" "+what+"</h1>");
+  $("#result-container").css("display", "block").hide().delay(100).fadeIn(500);
   setTimeout(function () {
     $("#result-container").fadeOut(500);
     setTimeout(function () {
-      $("#power-container").css("display", "block");
+      $("#power-container").hide().fadeIn(500);
     }, 500);
   }, 1000);
 }
@@ -172,6 +167,7 @@ $(document).ready(function () {
         $("#in1 > input:nth-child(1)").css("background", "green");
 
         generateCommand("blue");
+        GUIAlert("YOU", "WON!", "green");
         power(true);
         populateOuts();
 
@@ -185,6 +181,7 @@ $(document).ready(function () {
         $("#in1 > input:nth-child(1)").css("background", "red");
 
         generateCommand("blue");
+        GUIAlert("YOU", "LOST!", "red");
         power(false);
         populateOuts();
 
