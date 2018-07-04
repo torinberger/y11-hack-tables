@@ -248,6 +248,10 @@ $(document).ready(function () {
     console.log(difficulty);
     doAudio = $('#doAudio').is(":checked");
     console.log(doAudio);
+    red = 50;
+    blue = 50;   
+    $("#power-red").css("width", String(red+"%"));
+    $("#power-blue").css("width", String(blue+"%")); 
   });
 
   $("#grid-container").css("display", "none");
