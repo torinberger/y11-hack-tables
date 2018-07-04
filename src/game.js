@@ -82,8 +82,9 @@ function power(win) {
   if(win) {
     if(red-gameLength <= 0) {
       won = true;
-      $("#menu-container").css("display", "flex");
+      /*$("#menu-container").css("display", "flex").hide();*/
       $("#grid-container").css("display", "none");
+      $("#game-result").text("YOU WON");
       setTimeout(function () {
         won = false;
       }, 4000);
@@ -95,8 +96,9 @@ function power(win) {
     }
   } else {
     if(blue-gameLength <= 0) {
-      $("#menu-container").css("display", "flex");
+      /*$("#menu-container").css("display", "flex").hide();*/
       $("#grid-container").css("display", "none");
+      $("#game-result").text("YOU LOST");
       won = true;
       setTimeout(function () {
         won = false;
@@ -132,7 +134,7 @@ function enemyTurn() {
     $("#red-turn").css("background", "rgba(0, 0, 0, 0.5)");
     $("#blue-turn").css("background", "rgba(255, 255, 255, 0.5)");
     $("#in1 > input:nth-child(1)").css("background", "white");
-  }, 5000);
+  }, 300);
 }
 
 function GUIAlert(who, what, color) {

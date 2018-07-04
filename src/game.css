@@ -10,6 +10,8 @@
 body {
   background: url("../img/background.jpg");
   background-size: contain;
+  height: 100vh;
+  width: 100vw;
   font-family: 'Open Sans', sans-serif;
 }
 
