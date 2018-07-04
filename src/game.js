@@ -38,6 +38,7 @@ var difficulty = 10;
 var gameLength = 10;
 var acceptInput = true;
 var won = false;
+var doAudio = true;
 
 // # random num generater
 
@@ -156,6 +157,8 @@ $(document).ready(function () {
     console.log(gameLength);
     difficulty = Number($("#game-difficulty").val());
     console.log(difficulty);
+    doAudio = $('#doAudio').is(":checked");
+    console.log(doAudio);
   });
 
   $("#grid-container").css("display", "none");
@@ -167,8 +170,10 @@ $(document).ready(function () {
         $("#in1 > input:nth-child(1)").css("background", "green");
 
         generateCommand("blue");
-        var audio = new Audio('src/correct.mp3');
-        audio.play();
+        if(doAudio) {
+          var audio = new Audio('src/correct.mp3');
+          audio.play();
+        }
         GUIAlert("YOU", "WON!", "green");
         power(true);
         populateOuts();
@@ -183,8 +188,10 @@ $(document).ready(function () {
         $("#in1 > input:nth-child(1)").css("background", "red");
 
         generateCommand("blue");
-        var audio = new Audio('src/incorrect.mp3');
-        audio.play();
+        if(doAudio) {
+          var audio = new Audio('src/incorrect.mp3');
+          audio.play();
+        }
         GUIAlert("YOU", "LOST!", "red");
         power(false);
         populateOuts();
