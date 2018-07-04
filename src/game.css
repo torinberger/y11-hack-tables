@@ -26,6 +26,10 @@ body {
   width: 100vw;
   height: 100vh;
 }
+#menu .do {
+  margin-top: -40px;
+  margin-left: -5px;
+}
 
 #menu {
   margin: auto;
@@ -204,4 +208,24 @@ body {
   margin: auto;
   font-size: 4vw;
   color: red;
+}
+
+.app {
+  border-top: #bbb 30px solid;
+  border-radius: 10px;
+}
+.do {
+  font-family: sans-serif;
+  background: #ff4c4c;
+  width: 1.2vw;
+  height: 1.2vw;
+  margin-top: -25px;
+  position: absolute;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+.do p {
+  color:black;
+  margin-left: 0.27vw;
+  padding-top: 0.1vw;
 }
