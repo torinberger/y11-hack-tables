@@ -112,6 +112,7 @@ function power(win) {
       $("#game-result").text("YOU LOST");
       $("#game-result").show();
       if(doAudio) {
+        // spam windows xp noise
         var audio = new Audio('src/lose.mp3');
         audio.play();
         setTimeout(function () {
@@ -249,9 +250,9 @@ $(document).ready(function () {
     doAudio = $('#doAudio').is(":checked");
     console.log(doAudio);
     red = 50;
-    blue = 50;   
+    blue = 50;
     $("#power-red").css("width", String(red+"%"));
-    $("#power-blue").css("width", String(blue+"%")); 
+    $("#power-blue").css("width", String(blue+"%"));
   });
 
   $("#grid-container").css("display", "none");
