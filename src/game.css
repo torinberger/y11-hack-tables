@@ -8,8 +8,8 @@
 }
 
 body {
-  background: url("../img/background.jpg");
-  background-size: contain;
+  background: url("https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2018/03/kali-linux-desktop.jpg?itok=2zeBhRbo");
+  background-size: cover;
   height: 100vh;
   width: 100vw;
   font-family: 'Open Sans', sans-serif;
@@ -62,6 +62,10 @@ body {
   text-align: center;
   margin-top: 40vh;
   font-size: 10vh;
+}
+
+#header-bar {
+
 }
 
 #out1 {
@@ -243,4 +247,29 @@ body {
   color:black;
   margin-left: 0.27vw;
   padding-top: 0.1vw;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    margin: 0.4vw;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
