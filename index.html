@@ -15,20 +15,31 @@
     <title>Hack Tables</title>
   </head>
   <body>
+    <!-- # WIN/LOOSE Output (at end game)
+    ---------------------------------->
     <h1 id="game-result"></h1>
     <div id="menu-container">
+      <!-- # Menu Div
+      ---------------------------------->
       <div id="menu" class="app">
         <div class="do"><p>X</p></div>
         <h1 id="menu-header">Hack Tables!</h1>
+        <!-- # Game Length Input
+        ---------------------------------->
         <h2 style="color: red;margin-top:3vh;">Game Length: </h2>
         <span style="color: white;text-align:left;margin-left:2vw;">[Short]</span><span style="color: white;float:right;margin-right:2vw;">[Extreme]</span>
         <input type="range" min="0" max="10" id="game-length" />
 
+        <!-- # Game Difficulty Input
+        ---------------------------------->
         <div>
           <h2 style="color: red;margin-top:3vh;">Difficulty: </h2>
           <span style="color: white;text-align:left;margin-left:2vw;">[Easy]</span><span style="color: white;float:right;margin-right:2vw;">[Impossible]</span>
           <input type="range" min="0" max="10" id="game-difficulty" />
         </div>
+
+        <!-- # Submit Button/Music Checkbox
+        ---------------------------------->
         <input type="checkbox" id="doAudio" style="margin-left:13vw;margin-top:2vh;" checked name="Music"><span style="color: white;text-align:left;"> Music</span> <br>
         <div>
           <button id="play" style="background:#20C20E;color:white;border:0;margin:auto;margin-top:5vh;display:block;padding:1vw;width:10vw;border-radius:5px;font-size:1vw;">PLAY!</button>
@@ -37,21 +48,38 @@
     </div>
     <div id="grid-container">
 
+      <!-- # First Times Output
+      ---------------------------------->
       <div id="out1">
 
       </div>
+
+      <!-- # Times Icon
+      ---------------------------------->
       <div id="times">
         <i class="fas fa-times"></i>
       </div>
+
+      <!-- # Second Times Output
+      ---------------------------------->
       <div id="out2">
 
       </div>
+
+      <!-- # Equals Icon
+      ---------------------------------->
       <div id="equals">
         <i class="fas fa-equals"></i>
       </div>
+
+      <!-- # Times Table Input
+      ---------------------------------->
       <div id="in1">
         <input type="text">
       </div>
+
+      <!-- # Fake Console for Decor
+      ---------------------------------->
       <div id="console" class="app tooltip">
         <span class="tooltiptext" style="font-family: 'Open Sans', sans-serif;">Console</span>
         <div class="do"><p>X</p></div>
@@ -59,19 +87,30 @@
 
         </div>
       </div>
+
+      <!-- # Power Bar
+      ---------------------------------->
       <div id="power" class="app">
         <div class="do"><p>X</p></div>
+        <!-- # You got it right/you got it wrong output
+        ---------------------------------->
         <div id="result-container"></div>
         <div id="power-container" class="tooltip">
           <span class="tooltiptext">Power Bar</span>
           <div id="power-blue"></div><div id="power-red"></div>
         </div>
       </div>
+
+      <!-- # Divider
+      ---------------------------------->
       <div id="break">
         <div id="break-element">
 
         </div>
       </div>
+
+      <!-- # Turn Indicator
+      ---------------------------------->
       <div id="turn" class="app tooltip">
         <div class="do"><p>X</p></div>
         <span class="tooltiptext">Turn Indicator</span>
