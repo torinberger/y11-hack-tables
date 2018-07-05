@@ -49,14 +49,18 @@ function ranBetween(min, max) {
 // # Console
 
 function generateCommand(color) {
+  // Select random command
   var target = ranBetween(0, commands.length-1);
   var command;
+  // Color user
   if(color == "blue") {
     command = "<p class='command'><span style='color: blue;' class='user'>admin@hack-master</span><span class='white'>$</span> "+commands[target]+"</p>";
   } else {
     command = "<p class='command'><span style='color: red;' class='user'>badguy@hack-headquarters</span><span class='white'>$</span> "+commands[target]+"</p>";
   }
+  // Add command
   $("#console-text").append(command);
+  // Scroll to console bottom
   $("#console-text").animate({ scrollTop: $("#console-text")[0].scrollHeight - $("#console-text").height() }, 500);
 
   var outputTarget = ranBetween(0, outputs.length-1);
