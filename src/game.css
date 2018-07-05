@@ -64,10 +64,6 @@ body {
   font-size: 10vh;
 }
 
-#header-bar {
-
-}
-
 #out1 {
   grid-area: out1;
   text-align: center;
