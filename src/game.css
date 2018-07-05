@@ -2,11 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
 
+/* defaulting (makes coding easier) */
  * {
   margin: 0;
   padding: 0;
 }
 
+/* body (entire page) */
 body {
   background: url("https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2018/03/kali-linux-desktop.jpg?itok=2zeBhRbo");
   background-size: cover;
@@ -15,6 +17,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+/* all layout css */
 #grid-container {
   display: grid;
   grid-template-columns: 0.5fr [out1-start console-start] 1fr [out1-end times-start] 1fr [times-end out2-start] 1fr [equals-start out2-end console-end] 0.5fr [break-start power-start turn-start] 0.5fr [equals-end in1-start] 1fr [in1-end break-end power-end turn-end] 0.5fr;
@@ -23,16 +26,19 @@ body {
   height: 100vh;
 }
 
+/* container for menu (didn't see that one coming) */
 #menu-container {
   display: flex;
   width: 100vw;
   height: 100vh;
 }
+/* menu "x" button */
 #menu .do {
   margin-top: -40px;
   margin-left: -5px;
 }
 
+/* menu div (what else?) */
 #menu {
   margin: auto;
   width: 30vw;
@@ -43,6 +49,7 @@ body {
   padding: 1vw;
 }
 
+/* menu title h1 */
 #menu-header {
   text-align: center;
   width: 100%;
@@ -51,10 +58,13 @@ body {
   font-family: 'Share Tech Mono', monospace;
 }
 
+/* settings sliders */
 #game-length, #game-difficulty {
   width: 80%;
   margin-left: 10%;
 }
+
+/* win/loose container */
 #game-result {
   width: 100vw;
   color: white;
@@ -64,6 +74,7 @@ body {
   font-size: 10vh;
 }
 
+/* first table output */
 #out1 {
   grid-area: out1;
   text-align: center;
@@ -74,6 +85,7 @@ body {
   color: white;
 }
 
+/* times icon */
 #times {
   grid-area: times;
 }
@@ -88,6 +100,7 @@ body {
   font-size: 200%;
 }
 
+/* second table output */
 #out2 {
   grid-area: out2;
   text-align: center;
@@ -98,6 +111,7 @@ body {
   color: white;
 }
 
+/* equals icon */
 #equals {
   grid-area: equals;
 }
@@ -112,6 +126,7 @@ body {
   font-size: 200%;
 }
 
+/* user input */
 #in1 {
   grid-area: in1;
 }
@@ -142,6 +157,7 @@ body {
 .white {color: white;}
 .command {color: #20C20E;margin-bottom: 0.5%;}
 
+/* power indicator */
 #power {
   grid-area: power;
   background: rgba(0, 0, 0, 0.5);
@@ -175,6 +191,7 @@ body {
   display: inline-block;
 }
 
+/* seperator */
 #break {
   grid-area: break;
 }
@@ -185,6 +202,7 @@ body {
   border: 2px solid black;
 }
 
+/* turn indicator */
 #turn {
   grid-area: turn;
   background: rgba(0, 0, 0, 0.5);
@@ -193,6 +211,7 @@ body {
   grid-template-columns:  [a-start] 1fr [a-end b-start] 1fr [b-end];
 }
 
+/* blue turn holder */
 #blue-turn {
   grid-area: a;
   width: 100%;
@@ -200,6 +219,7 @@ body {
   display: flex;
 }
 
+/* blue computer icon */
 #blue-turn i {
   margin: auto;
   font-size: 4vw;
@@ -207,6 +227,7 @@ body {
   padding: 0.5vw;
 }
 
+/* red turn holder */
 #red-turn {
   grid-area: b;
   width: 100%;
@@ -214,21 +235,25 @@ body {
   display: flex;
 }
 
+/* red computer icon */
 #red-turn i {
   margin: auto;
   font-size: 4vw;
   color: red;
 }
 
+/* you win/lose message */
 #result-h1 {
   text-align: center;
   font-style: italic;
 }
 
+/* div macOS style menu */
 .app {
   border-top: #bbb 30px solid;
   border-radius: 10px;
 }
+/* macOS style "x" button in menu*/
 .do {
   font-family: sans-serif;
   background: #ff4c4c;
@@ -239,15 +264,17 @@ body {
   margin-left: 10px;
   border-radius: 10px;
 }
+/* "x" in menu button */
 .do p {
   color:black;
   margin-left: 0.27vw;
   padding-top: 0.1vw;
 }
 
+/* tooltip class/container */
 .tooltip {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 /* Tooltip text */
@@ -259,7 +286,7 @@ body {
     padding: 5px;
     border-radius: 6px;
 
-    /* Position the tooltip text - see examples below! */
+    /* Position the tooltip text */
     position: absolute;
     z-index: 1;
     margin: 0.4vw;
